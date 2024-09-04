@@ -1,0 +1,20 @@
+public class SpecialCharacterCounter {
+    public static void main(String[] args) {
+        String statement = "Modi Birthday @ September 17, #&$% is the wishes code for him.";
+        
+        int specialCharCount = countSpecialCharacters(statement);
+        
+        System.out.println("Number of special Characters: " + specialCharCount);
+    }
+
+    public static int countSpecialCharacters(String str) {
+        int count = 0;
+        for (char c : str.toCharArray()) {
+            // Check if the character is not a letter or digit
+            if (!Character.isLetterOrDigit(c) && !Character.isWhitespace(c)) {
+                count++;
+            }
+        }
+        return count;
+    }
+}
