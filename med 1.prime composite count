@@ -1,0 +1,32 @@
+public class PrimeCompositeCounter {
+    
+    public static boolean isPrime(int n) {
+        if (n < 2) {
+            return false;
+        }
+        for (int i = 2; i < n; i++) {
+            if (n % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static void main(String[] args) {
+        int[] numbers = {4, 54, 29, 71, 7, 59, 98, 23};
+        
+        int primeCount = 0;
+        int compositeCount = 0;
+
+        for (int number : numbers) {
+            if (isPrime(number)) {
+                primeCount++;
+            } else if (number > 1) {
+                compositeCount++;
+            }
+        }
+
+        System.out.println("Prime numbers count: " + primeCount);
+        System.out.println("Composite numbers count: " + compositeCount);
+    }
+}
