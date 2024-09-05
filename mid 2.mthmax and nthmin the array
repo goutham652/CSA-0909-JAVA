@@ -1,0 +1,29 @@
+import java.util.Arrays;
+
+public class MNMaxMin {
+    
+    public static void main(String[] args) {
+        int[] numbers = {4, 54, 29, 71, 7, 59, 98, 23};
+        int M = 2; // Mth maximum
+        int N = 3; // Nth minimum
+        
+        // Sort the array
+        Arrays.sort(numbers);
+        
+        // Find Nth minimum
+        int nthMin = numbers[N - 1];
+        
+        // Find Mth maximum
+        int mthMax = numbers[numbers.length - M];
+        
+        // Calculate sum and difference
+        int sum = nthMin + mthMax;
+        int difference = mthMax - nthMin;
+        
+        // Print results
+        System.out.println("Mth Maximum: " + mthMax);
+        System.out.println("Nth Minimum: " + nthMin);
+        System.out.println("Sum: " + sum);
+        System.out.println("Difference: " + difference);
+    }
+}
