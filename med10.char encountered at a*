@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class CharacterCounter {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int upperCaseCount = 0, lowerCaseCount = 0, numberCount = 0;
+        char ch;
+
+        while ((ch = scanner.next().charAt(0)) != '*') {
+            if (ch >= 'A' && ch <= 'Z') upperCaseCount++;
+            else if (ch >= 'a' && ch <= 'z') lowerCaseCount++;
+            else if (ch >= '0' && ch <= '9') numberCount++;
+        }
+
+        System.out.println("Total count of lower case: " + lowerCaseCount);
+        System.out.println("Total count of upper case: " + upperCaseCount);
+        System.out.println("Total count of numbers: " + numberCount);
+
+        scanner.close();
+    }
+}
